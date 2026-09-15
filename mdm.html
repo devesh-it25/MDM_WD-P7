@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-indigo-500 to-cyan-500 flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-96">
+
+        <h2 class="text-2xl font-bold text-center text-pink-600 mb-6">
+             Library Help Portal
+        </h2>
+
+        <p class="text-center mb-5 text-gray-600">
+            Frequently Asked Questions
+        </p>
+
+        <!-- FAQ 1 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded">
+                What are the library opening hours?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                The library is open from 9:00 AM to 6:00 PM, Monday to Saturday.
+            </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded">
+                How many books can I borrow?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                Students can borrow up to 3 books at a time using their library card.
+            </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-indigo-500 to-cyan-500 text-white rounded">
+                How long can I keep a borrowed book?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                Books can be borrowed for 14 days. You can renew the book if it has not been reserved by another student.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+
+        // Get all questions
+        let questions = document.querySelectorAll(".question");
+
+        // Add click event to each question
+        questions.forEach(function(question) {
+
+            question.addEventListener("click", function() {
+
+                // Get the answer
+                let answer = question.nextElementSibling;
+
+                // Show / Hide answer
+                answer.classList.toggle("hidden");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
